@@ -1,19 +1,24 @@
 import { cn } from "../../lib/utils"
 
-interface LiveProjectButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface LiveProjectButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string
+  href?: string
 }
 
-export function LiveProjectButton({ className, ...props }: LiveProjectButtonProps) {
+export function LiveProjectButton({ className, href, ...props }: LiveProjectButtonProps) {
   return (
-    <button
+    <a
+      href={href || "#"}
+      target={href ? "_blank" : undefined}
+      rel={href ? "noopener noreferrer" : undefined}
       className={cn(
-        "rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 text-sm sm:text-base hover:bg-[#D7E2EA]/10 transition-colors",
+        "rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest text-sm sm:text-base hover:bg-[#D7E2EA]/10 transition-colors inline-flex items-center justify-center",
         className
       )}
+      style={{ padding: "12px 32px" }}
       {...props}
     >
       Live Project
-    </button>
+    </a>
   )
 }
