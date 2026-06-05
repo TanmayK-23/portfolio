@@ -11,7 +11,7 @@ export function HeroSection() {
         <div className="flex flex-col w-max">
           {/* Navbar */}
           <FadeIn delay={0} y={-20} as="nav" className="flex justify-between w-full px-1 sm:px-2" style={{ marginBottom: "-1.5vw" }}>
-            {["About", "Price", "Projects", "Contact"].map((item) => (
+            {["About", "Education", "Projects", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
