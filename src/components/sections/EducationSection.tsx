@@ -51,9 +51,6 @@ export function EducationSection() {
               </h3>
               <div className="font-bold opacity-40 text-sm sm:text-base uppercase tracking-widest mb-6 text-left">
                 Bachelor of Technology • CSE
-                <div className="flex flex-wrap gap-3 mt-3 justify-start">
-                  <span className="text-[#D7E2EA] bg-[#0C0C0C] px-3 py-1.5 rounded-lg text-sm sm:text-base inline-block opacity-100 font-medium tracking-normal shadow-md">CGPA: 9.79</span>
-                </div>
               </div>
 
               <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] mb-8 mt-4 rounded-3xl overflow-hidden drop-shadow-2xl">
@@ -64,8 +61,11 @@ export function EducationSection() {
                 />
               </div>
               <p className="font-light leading-relaxed text-[clamp(0.85rem,1.6vw,1.25rem)] opacity-80 text-left">
-                Graduated with honors, focusing on software engineering, web development, and algorithms. Built multiple full-stack applications and led the university coding club. Through rigorous coursework and practical projects, I gained a deep understanding of system architecture, database design, and modern frontend frameworks. I also collaborated with peers to develop an award-winning campus navigation app that is now used by thousands of students daily.
+                Currently focusing on software engineering, web development, and algorithms. Built multiple full-stack applications. Through coursework and practical projects, I gained a deep understanding of system architecture, database design, and modern frontend frameworks. I also collaborated with peers to develop an award-winning lab experiment visualization app.
               </p>
+              <div className="flex flex-wrap gap-3 mt-6 justify-start">
+                <span className="text-[#D7E2EA] bg-[#0C0C0C] text-xs sm:text-sm inline-block font-medium tracking-normal shadow-md" style={{ padding: "6px 16px", borderRadius: "8px" }}>CGPA: 9.79</span>
+              </div>
             </div>
           </FadeIn>
 
@@ -92,10 +92,6 @@ export function EducationSection() {
               </h3>
               <div className="font-bold opacity-40 text-sm sm:text-base uppercase tracking-widest text-right mb-6">
                 SENIOR SECONDARY SCHOOL
-                <div className="flex flex-wrap gap-3 mt-3 justify-end">
-                  <span className="text-[#D7E2EA] bg-[#0C0C0C] px-3 py-1.5 rounded-lg text-sm sm:text-base inline-block opacity-100 font-medium tracking-normal shadow-md">10th: 96.83%</span>
-                  <span className="text-[#D7E2EA] bg-[#0C0C0C] px-3 py-1.5 rounded-lg text-sm sm:text-base inline-block opacity-100 font-medium tracking-normal shadow-md">12th: 92.6%</span>
-                </div>
               </div>
 
               <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] mb-8 mt-4 rounded-3xl overflow-hidden drop-shadow-2xl">
@@ -106,8 +102,12 @@ export function EducationSection() {
                 />
               </div>
               <p className="font-light leading-relaxed text-[clamp(0.85rem,1.6vw,1.25rem)] opacity-80 text-right">
-                Excelled in Mathematics and Computer Science. Founded the school's first coding bootcamp and developed the official student portal website. My passion for technology began here, spending countless hours in the computer lab experimenting with basic web design and programming. I also participated in regional science fairs, presenting early prototypes of interactive web experiences that laid the foundation for my current design aesthetic.
+                Excelled in Mathematics and Science. My passion for technology began here, spending countless hours in the computer lab experimenting with basic web design and programming.
               </p>
+              <div className="flex flex-wrap gap-3 mt-6 justify-end">
+                <span className="text-[#D7E2EA] bg-[#0C0C0C] text-xs sm:text-sm inline-block font-medium tracking-normal shadow-md" style={{ padding: "6px 16px", borderRadius: "8px" }}>10th: 96.83%</span>
+                <span className="text-[#D7E2EA] bg-[#0C0C0C] text-xs sm:text-sm inline-block font-medium tracking-normal shadow-md" style={{ padding: "6px 16px", borderRadius: "8px" }}>12th: 92.6%</span>
+              </div>
             </div>
           </FadeIn>
         </div>
