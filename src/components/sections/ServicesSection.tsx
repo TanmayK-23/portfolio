@@ -37,7 +37,7 @@ export function ServicesSection() {
         </h2>
       </FadeIn>
 
-      <div className="w-fit max-w-[1600px] mx-auto flex flex-col gap-24 md:gap-32 px-4 sm:px-8 relative md:left-32 lg:left-56 xl:left-72 2xl:left-96">
+      <div className="w-fit max-w-[1600px] mx-auto flex flex-col gap-16 md:gap-24 px-4 sm:px-8 relative md:left-32 lg:left-56 xl:left-72 2xl:left-96">
         {SERVICES.map((service, index) => (
           <FadeIn
             key={service.num}

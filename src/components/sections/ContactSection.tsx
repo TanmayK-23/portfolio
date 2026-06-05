@@ -217,8 +217,13 @@ export function ContactSection() {
 
         {/* Professional Footer */}
         <div
-          className="w-full max-w-[1600px] mx-auto border-t border-[#D7E2EA]/10 mt-32 py-8 flex flex-col md:flex-row items-center justify-between gap-6 text-[#D7E2EA]/50 text-sm md:text-base"
-          style={{ paddingLeft: "clamp(2rem, 8vw, 8rem)", paddingRight: "clamp(2rem, 8vw, 8rem)" }}
+          className="w-full max-w-[1600px] mx-auto border-t border-[#D7E2EA]/10 mt-32 flex flex-col md:flex-row items-center justify-between gap-6 text-[#D7E2EA]/50 text-sm md:text-base"
+          style={{ 
+            paddingLeft: "clamp(2rem, 8vw, 8rem)", 
+            paddingRight: "clamp(2rem, 8vw, 8rem)",
+            paddingTop: "clamp(1rem, 2vw, 1.5rem)",
+            paddingBottom: "clamp(1rem, 2vw, 1.5rem)"
+          }}
         >
           <p>© {new Date().getFullYear()} Tanmay. All rights reserved.</p>
 
