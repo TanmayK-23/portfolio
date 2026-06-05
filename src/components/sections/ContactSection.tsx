@@ -199,7 +199,8 @@ export function ContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="mt-6 border border-[#D7E2EA] text-[#D7E2EA] hover:bg-[#D7E2EA] hover:text-[#0C0C0C] transition-all duration-300 px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 w-fit"
+                  className="mt-6 border border-[#D7E2EA] text-[#D7E2EA] hover:bg-[#D7E2EA] hover:text-[#0C0C0C] transition-all duration-300 rounded-full font-bold uppercase tracking-widest text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 w-fit"
+                  style={{ padding: "12px 28px" }}
                 >
                   {isSubmitting ? (
                     <>
