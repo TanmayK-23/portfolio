@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# Tanmay - Premium Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, highly interactive, and visually striking personal portfolio built with modern web technologies. Designed to leave a lasting impression with dynamic animations, magnetic UI elements, and a heavily refined dark aesthetic.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Framework**: React 19 + Vite
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **Form Handling**: Web3Forms (No backend required)
+- **Icons**: Lucide React
+- **Language**: TypeScript
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Magnetic UI Elements**: Custom physics-based magnetic components that follow the user's cursor for a premium, tactile feel.
+- **Scroll-Linked Animations**: Complex viewport-triggered reveal animations utilizing Framer Motion.
+- **Infinite Marquee**: A smooth, infinitely scrolling marquee section for technologies and skills.
+- **Fully Functional Contact Form**: Integrated with Web3Forms to send emails directly to your inbox without a custom backend.
+- **Legal Modal**: Custom animated modal for Privacy Policy and Terms of Service.
+- **Responsive Design**: Meticulously crafted to look flawless on giant desktop monitors and mobile devices alike.
+- **Advanced CSS Blending**: Custom CSS `mix-blend-mode` and masks to seamlessly integrate imagery into the background.
 
-## Expanding the ESLint configuration
+## 🛠️ Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+To run this project locally, follow these steps:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/TanmayK-23/portfolio.git
+   cd portfolio
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Set up Environment Variables**
+   Create a `.env` file in the root directory and add your Web3Forms access key:
+   ```env
+   VITE_WEB3FORMS_KEY=your_access_key_here
+   ```
+   *You can get a free key by signing up at [Web3Forms](https://web3forms.com/).*
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🏗️ Structure
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- `src/components/sections/` - The core building blocks of the one-page layout (Hero, About, Services, Projects, Education, Contact).
+- `src/components/ui/` - Reusable, highly interactive components (FadeIn, Magnet, AnimatedText, LegalModal).
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
