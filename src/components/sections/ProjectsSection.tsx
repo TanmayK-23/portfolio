@@ -64,6 +64,8 @@ function ProjectCard({
       <motion.div
         className="w-full mx-auto rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 flex flex-col gap-6 relative"
         style={{
+          height: "calc(100vh - 140px)",
+          maxHeight: "850px",
           scale,
           originX: 0.5,
           originY: 0,
@@ -71,7 +73,7 @@ function ProjectCard({
         }}
       >
         {/* ── Top row: number · category · name · button ─────── */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 pb-2">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 pb-2 shrink-0">
           <div className="flex items-center gap-4 sm:gap-6">
             {/* Number — same huge style as services section */}
             <span
@@ -98,23 +100,17 @@ function ProjectCard({
         </div>
 
         {/* ── Bottom row: two-column image grid ──────────────── */}
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-1 min-h-0">
           {/* Left column (40%) — 2 stacked images */}
-          <div className="w-[40%] flex flex-col gap-4">
-            <div
-              className="w-full relative rounded-[40px] sm:rounded-[50px] md:rounded-[60px] overflow-hidden"
-              style={{ height: "clamp(130px, 16vw, 230px)" }}
-            >
+          <div className="w-[40%] flex flex-col gap-4 h-full">
+            <div className="w-full flex-[0.4] relative rounded-[30px] sm:rounded-[40px] md:rounded-[50px] overflow-hidden">
               <img
                 src={project.images.left1}
                 alt={`${project.name} preview 1`}
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
-            <div
-              className="w-full relative rounded-[40px] sm:rounded-[50px] md:rounded-[60px] overflow-hidden"
-              style={{ height: "clamp(160px, 22vw, 340px)" }}
-            >
+            <div className="w-full flex-[0.6] relative rounded-[30px] sm:rounded-[40px] md:rounded-[50px] overflow-hidden">
               <img
                 src={project.images.left2}
                 alt={`${project.name} preview 2`}
@@ -124,13 +120,7 @@ function ProjectCard({
           </div>
 
           {/* Right column (60%) — 1 tall image matching left total height */}
-          <div
-            className="w-[60%] relative rounded-[40px] sm:rounded-[50px] md:rounded-[60px] overflow-hidden"
-            style={{
-              height:
-                "calc(clamp(130px, 16vw, 230px) + clamp(160px, 22vw, 340px) + 1rem)",
-            }}
-          >
+          <div className="w-[60%] h-full relative rounded-[30px] sm:rounded-[40px] md:rounded-[50px] overflow-hidden">
             <img
               src={project.images.right}
               alt={`${project.name} main`}
