@@ -32,7 +32,7 @@ export function AboutSection() {
 
         <div className="w-full max-w-[560px] mb-16 sm:mb-20 md:mb-24">
           <AnimatedText
-            text="I am a 3rd year CS student, with more than two years of experience in development, i focus on logic building, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!"
+            text="Hello, myself TANMAY KUMAR, I am a computer science student, with more than three years of experience in development, i focus on logic building, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!"
             className="text-[#D7E2EA] font-medium leading-relaxed text-[clamp(1rem,2vw,1.35rem)] text-center"
           />
         </div>
