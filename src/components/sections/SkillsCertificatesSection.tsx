@@ -76,17 +76,17 @@ export function SkillsCertificatesSection() {
         </FadeIn>
 
         {/* SKILLS LIST */}
-        <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-y-20 sm:gap-y-28 gap-x-8 lg:gap-x-16 px-5 sm:px-10">
+        <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-y-12 sm:gap-y-28 gap-x-8 lg:gap-x-16 px-5 sm:px-10">
           {SKILLS.map((skill, index) => (
             <FadeIn
               key={skill.num}
               delay={0.1 + (index * 0.05)}
               y={40}
               viewportAmount={0.4}
-              className="relative w-full flex flex-col sm:flex-row sm:items-start justify-start gap-4 sm:gap-8"
+              className="relative w-full flex flex-row items-start justify-start gap-4 sm:gap-8"
             >
               {/* Giant Number */}
-              <div className="text-[#0C0C0C] font-black leading-none text-[clamp(4rem,8vw,80px)] shrink-0 w-auto sm:w-[100px] text-left opacity-20 hover:opacity-100 transition-opacity duration-500 sm:mt-[-8px]">
+              <div className="text-[#0C0C0C] font-black leading-none text-[clamp(3.5rem,8vw,80px)] shrink-0 w-[70px] sm:w-[100px] text-left opacity-20 hover:opacity-100 transition-opacity duration-500 sm:mt-[-8px]">
                 {skill.num}
               </div>
 

@@ -60,12 +60,21 @@ function ProjectCard({
   const scale = useTransform(progress, range, [1, targetScale])
 
   return (
-    <div className="h-[85vh] sticky top-24 md:top-32 w-full">
+    <div className="h-[75vh] md:h-[85vh] sticky top-20 md:top-32 w-full">
+      <style>{`
+        .project-card-dynamic {
+          height: clamp(480px, 65vh, 850px);
+        }
+        @media (min-width: 768px) {
+          .project-card-dynamic {
+            height: calc(100vh - 140px);
+            max-height: 850px;
+          }
+        }
+      `}</style>
       <motion.div
-        className="w-full mx-auto rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 flex flex-col gap-6 relative"
+        className="project-card-dynamic w-full mx-auto rounded-[35px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 flex flex-col gap-4 sm:gap-6 relative"
         style={{
-          height: "calc(100vh - 140px)",
-          maxHeight: "850px",
           scale,
           originX: 0.5,
           originY: 0,

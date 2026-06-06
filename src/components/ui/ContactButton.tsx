@@ -17,9 +17,9 @@ export function ContactButton({ className, ...props }: ContactButtonProps) {
         className
       )}
       style={{
-        padding: "20px 60px",
-        minWidth: "200px",
-        minHeight: "60px",
+        padding: "clamp(12px, 3vw, 20px) clamp(30px, 8vw, 60px)",
+        minWidth: "clamp(140px, 25vw, 200px)",
+        minHeight: "clamp(44px, 6vw, 60px)",
         background: "linear-gradient(90deg, #620D84 0%, #B600A8 45%, #D64238 100%)",
         boxShadow: "inset 0px 4px 8px rgba(255, 255, 255, 0.15), 0 0 15px rgba(182, 0, 168, 0.5)"
       }}

@@ -25,7 +25,7 @@ export function HeroSection() {
           {/* Hero Heading */}
           <div className="overflow-hidden w-full">
             <FadeIn delay={0.15} y={40} className="w-full">
-              <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap text-center text-[10vw] sm:text-[11vw] md:text-[12vw] lg:text-[13vw]">
+              <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap text-center text-[14.5vw] sm:text-[11vw] md:text-[12vw] lg:text-[13vw]">
                 Hi, i&apos;m tanmay
               </h1>
             </FadeIn>
@@ -57,7 +57,7 @@ export function HeroSection() {
       </div>
 
       {/* Hero Portrait - Centered Absolutely */}
-      <div className="absolute inset-0 flex items-center sm:items-end justify-center z-0 pointer-events-none">
+      <div className="absolute inset-0 flex items-center sm:items-end justify-center z-0 pointer-events-none pb-[12vh] sm:pb-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
