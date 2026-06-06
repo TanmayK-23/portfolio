@@ -10,10 +10,10 @@ interface AnimatedTextProps {
 export function AnimatedText({ text, className }: AnimatedTextProps) {
   const containerRef = useRef<HTMLParagraphElement>(null)
   
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 0.8", "end 0.2"]
-  })
+    const { scrollYProgress } = useScroll({
+      target: containerRef,
+      offset: ["start 0.85", "center 0.45"]
+    })
 
   const words = text.split(" ")
   const totalChars = text.replace(/\s/g, "").length
