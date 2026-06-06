@@ -35,9 +35,8 @@ export function EducationSection() {
             delay={0.1}
             duration={0.8}
             viewportAmount={0.2}
-            className="w-full shrink-0"
+            className="w-full md:w-1/2 shrink-0"
             style={{
-              width: "50%",
               paddingLeft: "clamp(1rem, 4vw, 4rem)",
               paddingRight: "clamp(2rem, 6vw, 6rem)"
             }}
@@ -76,9 +75,8 @@ export function EducationSection() {
             delay={0.1}
             duration={0.8}
             viewportAmount={0.2}
-            className="w-full shrink-0 pt-16 md:pt-0"
+            className="w-full md:w-1/2 shrink-0 pt-16 md:pt-0"
             style={{
-              width: "50%",
               paddingLeft: "clamp(2rem, 6vw, 6rem)",
               paddingRight: "clamp(1rem, 4vw, 4rem)"
             }}
