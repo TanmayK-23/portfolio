@@ -1,6 +1,6 @@
 import { FadeIn } from "../ui/FadeIn"
 import { AnimatedText } from "../ui/AnimatedText"
-import { ContactButton } from "../ui/ContactButton"
+import { DownloadResumeButton } from "../ui/DownloadResumeButton"
 
 export function AboutSection() {
   return (
@@ -39,7 +39,7 @@ export function AboutSection() {
 
         <FadeIn delay={0.2} y={30}>
           <div className="relative top-8 md:top-16">
-            <ContactButton />
+            <DownloadResumeButton href="/resume.pdf" download="Tanmay_Resume.pdf" />
           </div>
         </FadeIn>
       </div>

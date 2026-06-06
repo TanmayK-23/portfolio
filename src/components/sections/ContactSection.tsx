@@ -6,6 +6,8 @@ const SOCIAL_LINKS = [
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/tanmay-kumar-8ba11a301' },
   { name: 'Twitter', url: 'https://x.com/Play_with_Stark' },
   { name: 'GitHub', url: 'https://github.com/TanmayK-23' },
+  { name: 'LeetCode', url: 'https://leetcode.com/u/TanmayK-23/' },
+  { name: 'Resume', url: '/resume.pdf' },
 ]
 
 export function ContactSection() {
@@ -91,7 +93,7 @@ export function ContactSection() {
 
   return (
     <div className="relative w-full z-30">
-      {/* Background to blend with ServicesSection (which is white) */}
+      {/* Background to blend with SkillsCertificatesSection (which is white) */}
       <div className="absolute top-0 left-0 w-full h-[200px] bg-white" />
 
       <section
