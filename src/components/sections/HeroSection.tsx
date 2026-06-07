@@ -66,8 +66,7 @@ export function HeroSection() {
           className="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px] pointer-events-auto"
         >
           <Magnet padding={150} strength={3} activeTransition="transform 0.3s ease-out" inactiveTransition="transform 0.6s ease-in-out">
-            <img
-              src="/custom_avatar.png"
+            <img draggable="false" onContextMenu={(e) => e.preventDefault()}               src="/custom_avatar.png"
               alt="Hero Portrait"
               className="w-full h-auto object-contain"
               style={{

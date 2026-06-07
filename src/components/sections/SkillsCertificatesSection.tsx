@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import { useAnimationFrame, useInView } from "framer-motion"
 import { FadeIn } from "../ui/FadeIn"
 
 const SKILLS = [
@@ -24,23 +25,54 @@ const CERTIFICATES = [
 
 export function SkillsCertificatesSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const [offset, setOffset] = useState(0)
+  const isInView = useInView(sectionRef, { margin: "200px" })
+  
+  const row1Ref = useRef<HTMLDivElement>(null)
+  const row2Ref = useRef<HTMLDivElement>(null)
+  const [isHovered, setIsHovered] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return
-      const sectionTop = sectionRef.current.offsetTop
-      const scrollY = window.scrollY
-      const windowHeight = window.innerHeight
-      // Calculate offset based on scroll position relative to the section
-      const newOffset = (scrollY - sectionTop + windowHeight) * 0.4
-      setOffset(newOffset)
+  // Track exact floating point positions to prevent browser sub-pixel rounding bugs
+  const row1Pos = useRef(0)
+  const row2Pos = useRef(0)
+
+  // Auto-scroll logic
+  useAnimationFrame((_, delta) => {
+    // Pause animation if hovered OR if the section is not visible on screen
+    if (isHovered || !isInView) {
+      // Keep internal positions synced with user manual scrolling
+      if (row1Ref.current) row1Pos.current = row1Ref.current.scrollLeft
+      if (row2Ref.current) row2Pos.current = row2Ref.current.scrollLeft
+      return
     }
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    handleScroll() // Initial calculation
+    const speed = 0.8 * (delta / 16)
 
-    return () => window.removeEventListener("scroll", handleScroll)
+    // Row 1 (Moves Right -> scrollLeft decreases)
+    if (row1Ref.current) {
+      row1Pos.current -= speed
+      if (row1Pos.current <= 0) {
+        row1Pos.current = row1Ref.current.scrollWidth / 2
+      }
+      row1Ref.current.scrollLeft = row1Pos.current
+    }
+
+    // Row 2 (Moves Left -> scrollLeft increases)
+    if (row2Ref.current) {
+      row2Pos.current += speed
+      if (row2Pos.current >= row2Ref.current.scrollWidth / 2) {
+        row2Pos.current = 0
+      }
+      row2Ref.current.scrollLeft = row2Pos.current
+    }
+  })
+
+  // Start Row 1 at the middle to allow scrolling left immediately
+  useEffect(() => {
+    if (row1Ref.current) {
+      const startPos = row1Ref.current.scrollWidth / 2
+      row1Ref.current.scrollLeft = startPos
+      row1Pos.current = startPos
+    }
   }, [])
 
   // Split certificates into two rows
@@ -111,39 +143,41 @@ export function SkillsCertificatesSection() {
             </h3>
           </FadeIn>
 
-          <div className="w-full overflow-hidden mt-8 flex flex-col gap-4 sm:gap-6 lg:gap-8">
+          <div 
+            className="w-full overflow-hidden mt-8 flex flex-col gap-4 sm:gap-6 lg:gap-8"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onTouchStart={() => setIsHovered(true)}
+            onTouchEnd={() => setIsHovered(false)}
+          >
             {/* Row 1 - Moves Right */}
             <div
-              className="flex gap-4 sm:gap-6 lg:gap-8 whitespace-nowrap pl-4 sm:pl-8"
-              style={{
-                transform: `translateX(${-4000 + offset}px)`,
-                willChange: "transform"
-              }}
+              ref={row1Ref}
+              className="flex gap-4 sm:gap-6 lg:gap-8 whitespace-nowrap overflow-x-auto w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+              style={{ scrollBehavior: "auto" }}
             >
               {row1.map((img, i) => (
                 <div
                   key={`r1-${i}`}
-                  className="w-[280px] sm:w-[350px] md:w-[450px] h-[200px] sm:h-[250px] md:h-[300px] shrink-0 rounded-[20px] sm:rounded-[30px] overflow-hidden border border-[#0C0C0C]/10 shadow-lg hover:scale-[1.02] transition-transform duration-500"
+                  className="w-[280px] sm:w-[350px] md:w-[450px] h-[200px] sm:h-[250px] md:h-[300px] shrink-0 rounded-[20px] sm:rounded-[30px] overflow-hidden border border-[#0C0C0C]/10 shadow-lg hover:scale-[1.02] transition-transform duration-500 cursor-grab active:cursor-grabbing"
                 >
-                  <img src={img} alt="Certificate" className="w-full h-full object-cover" />
+                  <img draggable="false" onContextMenu={(e) => e.preventDefault()} src={img} alt="Certificate" className="w-full h-full object-cover pointer-events-none" />
                 </div>
               ))}
             </div>
 
             {/* Row 2 - Moves Left */}
             <div
-              className="flex gap-4 sm:gap-6 lg:gap-8 whitespace-nowrap pl-4 sm:pl-8"
-              style={{
-                transform: `translateX(${-offset}px)`,
-                willChange: "transform"
-              }}
+              ref={row2Ref}
+              className="flex gap-4 sm:gap-6 lg:gap-8 whitespace-nowrap overflow-x-auto w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+              style={{ scrollBehavior: "auto" }}
             >
               {row2.map((img, i) => (
                 <div
                   key={`r2-${i}`}
-                  className="w-[280px] sm:w-[350px] md:w-[450px] h-[200px] sm:h-[250px] md:h-[300px] shrink-0 rounded-[20px] sm:rounded-[30px] overflow-hidden border border-[#0C0C0C]/10 shadow-lg hover:scale-[1.02] transition-transform duration-500"
+                  className="w-[280px] sm:w-[350px] md:w-[450px] h-[200px] sm:h-[250px] md:h-[300px] shrink-0 rounded-[20px] sm:rounded-[30px] overflow-hidden border border-[#0C0C0C]/10 shadow-lg hover:scale-[1.02] transition-transform duration-500 cursor-grab active:cursor-grabbing"
                 >
-                  <img src={img} alt="Certificate" className="w-full h-full object-cover" />
+                  <img draggable="false" onContextMenu={(e) => e.preventDefault()} src={img} alt="Certificate" className="w-full h-full object-cover pointer-events-none" />
                 </div>
               ))}
             </div>

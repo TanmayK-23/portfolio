@@ -56,8 +56,7 @@ export function MarqueeSection() {
           }}
         >
           {row1.map((src, i) => (
-            <img
-              key={`r1-${i}`}
+            <img draggable="false" onContextMenu={(e) => e.preventDefault()}               key={`r1-${i}`}
               src={src}
               alt="Marquee Item"
               loading="lazy"
@@ -75,8 +74,7 @@ export function MarqueeSection() {
           }}
         >
           {row2.map((src, i) => (
-            <img
-              key={`r2-${i}`}
+            <img draggable="false" onContextMenu={(e) => e.preventDefault()}               key={`r2-${i}`}
               src={src}
               alt="Marquee Item"
               loading="lazy"

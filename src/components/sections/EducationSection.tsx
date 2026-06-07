@@ -53,8 +53,7 @@ export function EducationSection() {
               </div>
 
               <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] mb-8 mt-4 rounded-3xl overflow-hidden drop-shadow-2xl">
-                <img
-                  src="/college.jpg"
+                <img draggable="false" onContextMenu={(e) => e.preventDefault()}                   src="/college.jpg"
                   alt="College"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
                 />
@@ -93,8 +92,7 @@ export function EducationSection() {
               </div>
 
               <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] mb-8 mt-4 rounded-3xl overflow-hidden drop-shadow-2xl">
-                <img
-                  src="/school.jpg.webp"
+                <img draggable="false" onContextMenu={(e) => e.preventDefault()}                   src="/school.jpg.webp"
                   alt="School"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
                 />

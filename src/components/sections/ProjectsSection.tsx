@@ -113,15 +113,13 @@ function ProjectCard({
           {/* Left column (40%) — 2 stacked images */}
           <div className="w-[40%] flex flex-col gap-4 h-full">
             <div className="w-full flex-[0.4] relative rounded-[30px] sm:rounded-[40px] md:rounded-[50px] overflow-hidden">
-              <img
-                src={project.images.left1}
+              <img draggable="false" onContextMenu={(e) => e.preventDefault()}                 src={project.images.left1}
                 alt={`${project.name} preview 1`}
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
             <div className="w-full flex-[0.6] relative rounded-[30px] sm:rounded-[40px] md:rounded-[50px] overflow-hidden">
-              <img
-                src={project.images.left2}
+              <img draggable="false" onContextMenu={(e) => e.preventDefault()}                 src={project.images.left2}
                 alt={`${project.name} preview 2`}
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -130,8 +128,7 @@ function ProjectCard({
 
           {/* Right column (60%) — 1 tall image matching left total height */}
           <div className="w-[60%] h-full relative rounded-[30px] sm:rounded-[40px] md:rounded-[50px] overflow-hidden">
-            <img
-              src={project.images.right}
+            <img draggable="false" onContextMenu={(e) => e.preventDefault()}               src={project.images.right}
               alt={`${project.name} main`}
               className={`absolute inset-0 w-full h-full object-cover ${project.num === "02" ? "object-left-top" : ""}`}
             />
