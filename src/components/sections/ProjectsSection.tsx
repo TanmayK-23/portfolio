@@ -10,9 +10,9 @@ const PROJECTS = [
     category: "Client",
     link: "https://circuit-verse-mu.vercel.app",
     images: {
-      left1: "/9.png",
-      left2: "/2.png",
-      right: "/3.png",
+      left1: "/9.webp",
+      left2: "/2.webp",
+      right: "/3.webp",
     },
   },
   {
@@ -21,9 +21,9 @@ const PROJECTS = [
     category: "Personal",
     link: "https://tanmayk-23.github.io/Project-Lifeline/",
     images: {
-      left1: "/10.png",
-      left2: "/11.png",
-      right: "/7.png",
+      left1: "/10.webp",
+      left2: "/11.webp",
+      right: "/7.webp",
     },
   },
   {
@@ -34,7 +34,7 @@ const PROJECTS = [
     images: {
       left1: "/14.jpeg",
       left2: "/13.jpeg",
-      right: "/12.png",
+      right: "/12.webp",
     },
   },
 ]

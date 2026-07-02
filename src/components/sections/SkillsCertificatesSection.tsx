@@ -15,12 +15,12 @@ const CERTIFICATES = [
   "/ISA.jpg",
   "/DBMS.jpg",
   "/java.jpg",
-  "/Namespace.png",
+  "/Namespace.webp",
   "/oop.jpg",
   "/os.jpg",
   "/Poster.jpeg",
   "/Outreach.jpeg",
-  "/ultron.png",
+  "/ultron.webp",
 ]
 
 export function SkillsCertificatesSection() {

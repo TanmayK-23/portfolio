@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react"
 
 const ROW_1_IMAGES = [
-  "/1.png",
-  "/2.png",
-  "/3.png",
-  "/4.png",
+  "/1.webp",
+  "/2.webp",
+  "/3.webp",
+  "/4.webp",
 ]
 
 const ROW_2_IMAGES = [
-  "/5.png",
-  "/6.png",
-  "/7.png",
+  "/5.webp",
+  "/6.webp",
+  "/7.webp",
   "/8.jpeg",
 ]
 
