@@ -1,8 +1,8 @@
-# Tanmay - Premium Developer Portfolio
+# Tanmay -  Developer Portfolio
 
 A sleek, highly interactive, and visually striking personal portfolio built with modern web technologies. Designed to leave a lasting impression with dynamic animations, magnetic UI elements, and a heavily refined dark aesthetic.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Framework**: React 19 + Vite
 - **Styling**: Tailwind CSS v4
@@ -11,7 +11,7 @@ A sleek, highly interactive, and visually striking personal portfolio built with
 - **Icons**: Lucide React
 - **Language**: TypeScript
 
-## ✨ Key Features
+## Key Features
 
 - **Magnetic UI Elements**: Custom physics-based magnetic components that follow the user's cursor for a premium, tactile feel.
 - **Scroll-Linked Animations**: Complex viewport-triggered reveal animations utilizing Framer Motion.
@@ -21,7 +21,7 @@ A sleek, highly interactive, and visually striking personal portfolio built with
 - **Responsive Design**: Meticulously crafted to look flawless on giant desktop monitors and mobile devices alike.
 - **Advanced CSS Blending**: Custom CSS `mix-blend-mode` and masks to seamlessly integrate imagery into the background.
 
-## 🛠️ Getting Started
+## Getting Started
 
 To run this project locally, follow these steps:
 
@@ -48,11 +48,11 @@ To run this project locally, follow these steps:
    npm run dev
    ```
 
-## 🏗️ Structure
+## Structure
 
 - `src/components/sections/` - The core building blocks of the one-page layout (Hero, About, Services, Projects, Education, Contact).
 - `src/components/ui/` - Reusable, highly interactive components (FadeIn, Magnet, AnimatedText, LegalModal).
 
-## 📄 License
+## License
 
 This project is open-source and available under the [MIT License](LICENSE).
